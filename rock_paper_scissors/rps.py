@@ -4,23 +4,21 @@ import sys
 
 
 def rock_paper_scissors(n):
-    if n > 0:
-        list = [["rock"], ["paper"], ["scissors"]]
-        results = []
+    list = [["rock"], ["paper"], ["scissors"]]
+    results = []
 
-        def recurse(plays):
-            if len(plays) == n:
-                results.append(plays)
-                return
+    # set up recursive function
+    def recurse(plays):
+        if len(plays) == n:
+            results.append(plays)
+            return
 
-            for l in list:
-                recurse(plays + l)
+        for l in list:
+            recurse(plays + l)
+    # start recursing
+    recurse([])
 
-        recurse([])
-
-        return results
-
-    return [[]]
+    return results
 
 
 if __name__ == "__main__":
